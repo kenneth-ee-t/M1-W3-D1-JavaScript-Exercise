@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+</head>
+<body>
+    <div id="lunch">
+    <h1>Lunch recipes</h1>
+        <ul class="lunch">
+            <li>Put rice in boiler</li>
+            <li>Add rice and water</li>
+            <li>Allow to boil for 15mins </li>
+            <li>Chop vegetables with sauce</li>
+            <li>Serve hot</li>
+        </ul>
+    </div>
+    <div id="dinner">
+    <h1>Dinner recipes</h1>
+    <ul class="dinner">
+        <li>Select food from the fridge</li>
+        <li>Put in microwave</li>
+        <li>Bake chicken in oven</li>
+        <li>serve food hot</li>
+        <li>include driking water</li>
+    </ul>
+</div>
+<!--JavaScript-->
+<script>
+var currentTime = new Date();
+console.log(currentTime);
+var currentHour = currentTime.getHours();
+console.log(currentTime);
+
+function getMealTime() {
+    if (currentHour >= 12 && currentHour <18) {
+        return 'noon';
+    } else {
+        return 'sunset';
+    }
+}
+
+function displayRecipe() {
+    var mealTime = getMealTime();
+
+    if (mealTime === 'noon') {
+        document.getElementById('lunch').style.display = 'block';
+        document.getElementById('dinner').style.display = 'none';
+    } else {
+        document.getElementById('lunch').style.display = 'none';
+        document.getElementById('dinner').style.display = 'block';
+    }
+}
+
+displayRecipe();
+
+</script>
+</body>
+</html>
